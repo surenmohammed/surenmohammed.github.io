@@ -195,16 +195,13 @@ em {
     flex-shrink: 0;
 }
 
-.image-placeholder {
-    width: 200px;
-    height: 250px;
-    background: linear-gradient(135deg, var(--color-border) 0%, #cbd5e0 100%);
+.profile-photo {
+    width: 220px;
+    height: 280px;
+    object-fit: cover;
+    object-position: center top;
     border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-text-muted);
-    font-size: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .hero-text h1 {
@@ -648,7 +645,7 @@ em {
         padding: 2rem 0;
     }
 
-    .image-placeholder {
+    .profile-photo {
         width: 150px;
         height: 190px;
     }
