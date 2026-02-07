@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Research editor for Suren J. Mohammed">
+    <title>Research Admin | Suren J. Mohammed</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Suren J. Mohammed</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">About</a></li>
+                <li><a href="research.html" class="nav-link">Research</a></li>
+                <li><a href="teaching.html" class="nav-link">Teaching</a></li>
+                <li><a href="cv.html" class="nav-link">CV</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="page-header">
+            <div class="container">
+                <h1>Research Admin</h1>
+                <p class="page-intro">Edit your publications and export an updated <strong>research.json</strong> to commit to GitHub.</p>
+            </div>
+        </section>
+
+        <section class="admin-section">
+            <div class="container admin-grid">
+                <div class="admin-panel">
+                    <h2>Sections</h2>
+                    <div id="sectionList" class="section-list"></div>
+                    <form id="sectionForm" class="admin-form">
+                        <div>
+                            <label for="sectionTitle">New section title</label>
+                            <input type="text" id="sectionTitle" name="sectionTitle" placeholder="e.g., Work in Progress" required>
+                        </div>
+                        <div class="checkbox-row">
+                            <input type="checkbox" id="sectionAltBg" name="sectionAltBg">
+                            <label for="sectionAltBg">Alternate background</label>
+                        </div>
+                        <button type="submit" class="admin-button">Add section</button>
+                    </form>
+                </div>
+
+                <div class="admin-panel">
+                    <h2>Add / Edit Item</h2>
+                    <form id="itemForm" class="admin-form">
+                        <input type="hidden" id="editSectionIndex" value="">
+                        <input type="hidden" id="editItemIndex" value="">
+                        <div>
+                            <label for="itemSection">Section</label>
+                            <select id="itemSection" name="itemSection" required></select>
+                        </div>
+                        <div>
+                            <label for="itemType">Item type</label>
+                            <select id="itemType" name="itemType">
+                                <option value="publication">Publication</option>
+                                <option value="dissertation">Dissertation</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="itemTitle">Title</label>
+                            <input type="text" id="itemTitle" name="itemTitle" required>
+                        </div>
+                        <div>
+                            <label for="itemStatus">Status (optional)</label>
+                            <input type="text" id="itemStatus" name="itemStatus" placeholder="Expected Submission: Spring 2026">
+                        </div>
+                        <div>
+                            <label for="itemCommittee">Committee (optional)</label>
+                            <input type="text" id="itemCommittee" name="itemCommittee" placeholder="Professor A, Professor B">
+                        </div>
+                        <div>
+                            <label for="itemAbstract">Abstract</label>
+                            <textarea id="itemAbstract" name="itemAbstract" required></textarea>
+                        </div>
+                        <div>
+                            <label for="itemLinks">Links (one per line: Label | URL)</label>
+                            <textarea id="itemLinks" name="itemLinks" placeholder="PDF | https://example.com/paper.pdf"></textarea>
+                        </div>
+                        <button type="submit" class="admin-button" id="saveItemButton">Add item</button>
+                        <button type="button" class="admin-button ghost" id="resetItemButton">Reset</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="admin-section">
+            <div class="container admin-actions">
+                <button class="admin-button" id="downloadJson">Download research.json</button>
+                <button class="admin-button ghost" id="downloadJs">Download research-data.js</button>
+                <button class="admin-button ghost" id="copyJson">Copy JSON</button>
+                <label class="file-input">
+                    <input type="file" id="importJson" accept="application/json">
+                    <span>Import JSON</span>
+                </label>
+                <button class="admin-button ghost" id="reloadJson">Reload from site</button>
+                <span id="adminStatus" class="admin-status"></span>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Suren J. Mohammed. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="admin.js"></script>
+    <script>
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
