@@ -35,7 +35,9 @@ const renderResearch = (data) => {
         heading.textContent = section.title;
         container.append(heading);
 
-        section.items.forEach((item) => {
+        const items = Array.isArray(section.items) ? section.items : [];
+
+        items.forEach((item) => {
             const publication = document.createElement('div');
             publication.className = 'publication';
 

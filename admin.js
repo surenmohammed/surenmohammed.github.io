@@ -249,7 +249,25 @@ const addOrUpdateItem = () => {
     const editItemIndex = editItemIndexInput.value;
 
     if (editSectionIndex !== '' && editItemIndex !== '') {
-        state.sections[Number(editSectionIndex)].items[Number(editItemIndex)] = item;
+        const sourceSectionIndex = Number(editSectionIndex);
+        const sourceItemIndex = Number(editItemIndex);
+        const sourceSection = state.sections[sourceSectionIndex];
+        const sourceItems = sourceSection && Array.isArray(sourceSection.items)
+            ? sourceSection.items
+            : null;
+
+        if (!sourceItems || !sourceItems[sourceItemIndex]) {
+            setStatus('Unable to update item.');
+            return;
+        }
+
+        if (sourceSectionIndex === sectionIndex) {
+            sourceItems[sourceItemIndex] = item;
+        } else {
+            sourceItems.splice(sourceItemIndex, 1);
+            state.sections[sectionIndex].items.push(item);
+        }
+
         setStatus('Item updated.');
     } else {
         state.sections[sectionIndex].items.push(item);
