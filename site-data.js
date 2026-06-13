@@ -2,7 +2,7 @@
 // (or download this file and commit it to GitHub).
 window.SITE_DATA = {
   "profile": {
-    "name": "Suren J. Mohammed",
+    "name": "Suren Jamal. Mohammed",
     "fullName": "Suren Jamal Mohammed",
     "role": "PhD Student, Political Science",
     "institution": "University of Florida",
