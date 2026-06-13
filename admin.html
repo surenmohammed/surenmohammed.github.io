@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="Content editor for surenmohammed.github.io">
+    <title>Site Admin | Suren J. Mohammed</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+</head>
+<body class="admin-body">
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Suren J. Mohammed</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">About</a></li>
+                <li><a href="research.html" class="nav-link">Research</a></li>
+                <li><a href="teaching.html" class="nav-link">Teaching</a></li>
+                <li><a href="cv.html" class="nav-link">CV</a></li>
+                <li><a href="admin.html" class="nav-link active">Admin</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="admin-header">
+        <div class="container">
+            <h1>Site Admin</h1>
+            <p class="page-intro">Edit any part of the site below. Changes save automatically as a <strong>draft</strong> in this browser — use <strong>Preview draft</strong> to see them on the real pages, then <strong>Publish</strong> to push them live to GitHub Pages.</p>
+            <div class="admin-toolbar">
+                <button class="admin-button highlight" id="previewButton">Preview draft</button>
+                <button class="admin-button" id="goPublish">Publish…</button>
+                <button class="admin-button danger" id="discardButton">Discard draft</button>
+                <span id="adminStatus" class="admin-status" role="status"></span>
+            </div>
+            <div class="admin-tabs" role="tablist">
+                <button class="admin-tab active" data-tab="profile">Profile &amp; About</button>
+                <button class="admin-tab" data-tab="research">Research</button>
+                <button class="admin-tab" data-tab="teaching">Teaching</button>
+                <button class="admin-tab" data-tab="cv">CV</button>
+                <button class="admin-tab" data-tab="publish">Publish &amp; Export</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="admin-panel-wrap">
+        <div class="container">
+
+            <!-- ============ Profile tab ============ -->
+            <section class="tab-panel active" id="tab-profile">
+                <div class="admin-grid">
+                    <div class="admin-panel">
+                        <h2>Identity</h2>
+                        <div class="field-row">
+                            <div class="field">
+                                <label for="pfName">Display name</label>
+                                <input type="text" id="pfName" data-path="profile.name">
+                            </div>
+                            <div class="field">
+                                <label for="pfFullName">Full name</label>
+                                <input type="text" id="pfFullName" data-path="profile.fullName">
+                            </div>
+                        </div>
+                        <div class="field-row">
+                            <div class="field">
+                                <label for="pfRole">Role / title</label>
+                                <input type="text" id="pfRole" data-path="profile.role">
+                            </div>
+                            <div class="field">
+                                <label for="pfInstitution">Institution</label>
+                                <input type="text" id="pfInstitution" data-path="profile.institution">
+                            </div>
+                        </div>
+                        <div class="field-row">
+                            <div class="field">
+                                <label for="pfEmail">Email</label>
+                                <input type="email" id="pfEmail" data-path="profile.email">
+                            </div>
+                            <div class="field">
+                                <label for="pfPhoto">Photo file</label>
+                                <input type="text" id="pfPhoto" data-path="profile.photo">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="pfCvFile">CV PDF file</label>
+                            <input type="text" id="pfCvFile" data-path="profile.cvFile">
+                        </div>
+                        <div class="field">
+                            <label for="pfInterests">Research interests (comma separated)</label>
+                            <textarea id="pfInterests" data-list="profile.interests" data-sep=","></textarea>
+                        </div>
+                    </div>
+                    <div class="admin-panel">
+                        <h2>About paragraphs</h2>
+                        <p class="admin-hint">Shown on the home page. Separate paragraphs with a blank line.</p>
+                        <div class="field">
+                            <textarea id="pfBio" data-list="profile.bio" data-sep="paragraph" style="min-height: 260px;"></textarea>
+                        </div>
+                        <h2>Links</h2>
+                        <p class="admin-hint">One per line: <code>Label | URL</code> (e.g. <code>GitHub | https://github.com/you</code>). Shown as buttons on the home page and in the footer.</p>
+                        <div class="field">
+                            <textarea id="pfLinks"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============ Research tab ============ -->
+            <section class="tab-panel" id="tab-research">
+                <div class="admin-grid">
+                    <div class="admin-panel">
+                        <h2>Sections &amp; items</h2>
+                        <p class="admin-hint">Rename sections inline, use ↑ ↓ to reorder, and click <strong>Visible / Hidden</strong> to keep a section or paper off the live site without deleting it.</p>
+                        <div id="sectionList"></div>
+                        <form id="sectionForm" class="admin-form">
+                            <div>
+                                <label for="sectionTitle">New section title</label>
+                                <input type="text" id="sectionTitle" placeholder="e.g., Work in Progress" required>
+                            </div>
+                            <button type="submit" class="admin-button ghost">Add section</button>
+                        </form>
+                    </div>
+                    <div class="admin-panel">
+                        <h2 id="itemFormTitle">Add item</h2>
+                        <form id="itemForm" class="admin-form">
+                            <input type="hidden" id="editSectionIndex" value="">
+                            <input type="hidden" id="editItemIndex" value="">
+                            <div>
+                                <label for="itemSection">Section</label>
+                                <select id="itemSection" required></select>
+                            </div>
+                            <div>
+                                <label for="itemType">Item type</label>
+                                <select id="itemType">
+                                    <option value="publication">Publication / paper</option>
+                                    <option value="dissertation">Dissertation</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="itemTitle">Title / citation</label>
+                                <textarea id="itemTitle" style="min-height: 70px;" required></textarea>
+                            </div>
+                            <div>
+                                <label for="itemStatus">Status (optional)</label>
+                                <input type="text" id="itemStatus" placeholder="Expected Submission: Spring 2026">
+                            </div>
+                            <div>
+                                <label for="itemCommittee">Committee (optional)</label>
+                                <input type="text" id="itemCommittee" placeholder="Professor A (Chair), Professor B">
+                            </div>
+                            <div>
+                                <label for="itemAbstract">Abstract</label>
+                                <textarea id="itemAbstract"></textarea>
+                            </div>
+                            <div>
+                                <label for="itemLinks">Links (one per line: Label | URL)</label>
+                                <textarea id="itemLinks" placeholder="PDF | https://example.com/paper.pdf" style="min-height: 70px;"></textarea>
+                            </div>
+                            <div class="admin-actions">
+                                <button type="submit" class="admin-button" id="saveItemButton">Add item</button>
+                                <button type="button" class="admin-button ghost" id="resetItemButton">Clear form</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============ Teaching tab ============ -->
+            <section class="tab-panel" id="tab-teaching">
+                <div class="admin-panel">
+                    <h2>Intro paragraph</h2>
+                    <div class="field">
+                        <textarea id="teachingIntro" data-path="teaching.intro"></textarea>
+                    </div>
+                </div>
+                <div class="admin-panel">
+                    <h2>Positions / courses</h2>
+                    <p class="admin-hint">Each entry becomes a card on the Teaching page. “Courses” are shown as tags — one per line.</p>
+                    <div id="teachingList"></div>
+                    <button class="admin-button ghost" id="addTeaching">+ Add entry</button>
+                </div>
+            </section>
+
+            <!-- ============ CV tab ============ -->
+            <section class="tab-panel" id="tab-cv">
+                <div class="admin-panel">
+                    <h2>CV page visibility</h2>
+                    <p class="admin-hint">Take the whole CV offline at once. This removes the CV page from the site navigation and replaces the page with a short notice. Your CV content below is kept — it just won't be published while hidden.</p>
+                    <div class="admin-actions">
+                        <button class="admin-button" id="toggleCvHidden">Hide entire CV</button>
+                        <span id="cvVisibilityState" class="admin-status" role="status"></span>
+                    </div>
+                </div>
+                <div class="admin-panel" id="cvSectionsPanel">
+                    <h2>CV sections</h2>
+                    <p class="admin-hint">This edits the CV shown on the website. The downloadable PDF (<span id="cvFileName">Mohammed_CV.pdf</span>) is a separate file — replace it in the repository when you update your CV. Bullets: one per line.</p>
+                    <div id="cvList"></div>
+                    <button class="admin-button ghost" id="addCvSection">+ Add section</button>
+                </div>
+            </section>
+
+            <!-- ============ Publish tab ============ -->
+            <section class="tab-panel" id="tab-publish">
+                <div class="admin-grid">
+                    <div class="admin-panel">
+                        <h2>Publish to GitHub Pages</h2>
+                        <p class="admin-hint">Commits <code>site-data.js</code> straight to your repository — the live site updates a minute later. You need a GitHub <strong>fine-grained personal access token</strong> with <em>Contents: read &amp; write</em> permission for this repository (<a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">create one here</a>).</p>
+                        <div class="field-row">
+                            <div class="field">
+                                <label for="ghOwner">Owner</label>
+                                <input type="text" id="ghOwner" value="surenmohammed">
+                            </div>
+                            <div class="field">
+                                <label for="ghRepo">Repository</label>
+                                <input type="text" id="ghRepo" value="surenmohammed.github.io">
+                            </div>
+                        </div>
+                        <div class="field-row">
+                            <div class="field">
+                                <label for="ghBranch">Branch</label>
+                                <input type="text" id="ghBranch" value="main">
+                            </div>
+                            <div class="field">
+                                <label for="ghToken">Access token</label>
+                                <input type="password" id="ghToken" placeholder="github_pat_…">
+                            </div>
+                        </div>
+                        <div class="checkbox-row" style="margin-bottom: 14px;">
+                            <input type="checkbox" id="ghRemember">
+                            <label for="ghRemember">Remember token in this browser</label>
+                        </div>
+                        <div class="admin-actions">
+                            <button class="admin-button highlight" id="publishButton">Publish to live site</button>
+                            <span id="publishStatus" class="admin-status" role="status"></span>
+                        </div>
+                    </div>
+                    <div class="admin-panel">
+                        <h2>Manual export / backup</h2>
+                        <p class="admin-hint">Prefer doing it by hand? Download <code>site-data.js</code> and commit it to the repository yourself. JSON export/import is useful as a backup.</p>
+                        <div class="admin-actions">
+                            <button class="admin-button" id="downloadJs">Download site-data.js</button>
+                            <button class="admin-button ghost" id="downloadJson">Download backup (.json)</button>
+                            <button class="admin-button ghost" id="copyJson">Copy JSON</button>
+                            <label class="file-input">
+                                <input type="file" id="importJson" accept="application/json">
+                                <span>Import backup</span>
+                            </label>
+                        </div>
+                        <h3>How publishing works</h3>
+                        <p class="admin-hint">All site content lives in one file, <code>site-data.js</code>. Every page reads from it. Publishing simply replaces that file in your GitHub repository, so there is no server or database — and your draft stays private in this browser until you publish.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="footerYear">2026</span> Suren J. Mohammed — Admin</p>
+        </div>
+    </footer>
+
+    <script src="site-data.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
