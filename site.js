@@ -19,13 +19,27 @@
 
     var data = (previewMode && readDraft()) || window.SITE_DATA || {};
     var profile = data.profile || {};
-    var cvHidden = Boolean(data.cv && data.cv.hidden);
+    var pageHidden = {
+        research: Boolean(data.research && data.research.hidden),
+        teaching: Boolean(data.teaching && data.teaching.hidden),
+        cv: Boolean(data.cv && data.cv.hidden)
+    };
+    var cvHidden = pageHidden.cv;
 
     function el(tag, className, text) {
         var node = document.createElement(tag);
         if (className) { node.className = className; }
         if (text !== undefined && text !== null && text !== '') { node.textContent = text; }
         return node;
+    }
+
+    // A full-width "this page is offline" notice used when a whole page is hidden.
+    function noticeBlock(sectionClass) {
+        var section = el('section', sectionClass);
+        var container = el('div', 'container');
+        container.append(el('p', 'item-empty', 'This page is not currently available.'));
+        section.append(container);
+        return section;
     }
 
     /* ---------------------------------------------------------------- */
@@ -115,6 +129,11 @@
         if (!target) { return; }
         target.innerHTML = '';
 
+        if (pageHidden.research) {
+            target.append(noticeBlock('research-section'));
+            return;
+        }
+
         var sections = ((data.research && data.research.sections) || [])
             .filter(function (section) { return !section.hidden; });
         if (!sections.length) {
@@ -186,6 +205,11 @@
         var target = document.getElementById('teaching-content');
         if (!target) { return; }
         target.innerHTML = '';
+
+        if (pageHidden.teaching) {
+            target.append(noticeBlock('teaching-section'));
+            return;
+        }
 
         var teaching = data.teaching || {};
         var container = el('div', 'container');
@@ -292,24 +316,26 @@
         var navMenu = document.querySelector('.nav-menu');
         if (navToggle && navMenu) {
             navToggle.addEventListener('click', function () {
-                navMenu.classList.toggle('active');
+                var open = navMenu.classList.toggle('active');
                 navToggle.classList.toggle('active');
+                navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
             });
         }
 
         var logo = document.querySelector('.nav-logo');
         if (logo && profile.name) { logo.textContent = profile.name; }
 
-        // When the CV is hidden, drop its link from the top navigation.
-        if (cvHidden) {
+        // Drop the nav link for any page that is hidden from the live site.
+        Object.keys(pageHidden).forEach(function (pageName) {
+            if (!pageHidden[pageName]) { return; }
             document.querySelectorAll('.nav-menu a').forEach(function (a) {
                 var href = (a.getAttribute('href') || '').split('?')[0];
-                if (href === 'cv.html') {
+                if (href === pageName + '.html') {
                     var li = a.closest('li');
                     (li || a).remove();
                 }
             });
-        }
+        });
     }
 
     function setupFooter() {

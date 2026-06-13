@@ -115,7 +115,15 @@
 
             <!-- ============ Research tab ============ -->
             <section class="tab-panel" id="tab-research">
-                <div class="admin-grid">
+                <div class="admin-panel">
+                    <h2>Research page visibility</h2>
+                    <p class="admin-hint">Take the whole Research page offline at once. It's removed from the site navigation and the page shows a short notice. Your sections and items below are kept.</p>
+                    <div class="admin-actions">
+                        <button class="admin-button" id="toggleResearchHidden">Hide entire Research page</button>
+                        <span id="researchVisibilityState" class="admin-status" role="status"></span>
+                    </div>
+                </div>
+                <div class="admin-grid" id="researchEditor">
                     <div class="admin-panel">
                         <h2>Sections &amp; items</h2>
                         <p class="admin-hint">Rename sections inline, use ↑ ↓ to reorder, and click <strong>Visible / Hidden</strong> to keep a section or paper off the live site without deleting it.</p>
@@ -176,16 +184,26 @@
             <!-- ============ Teaching tab ============ -->
             <section class="tab-panel" id="tab-teaching">
                 <div class="admin-panel">
-                    <h2>Intro paragraph</h2>
-                    <div class="field">
-                        <textarea id="teachingIntro" data-path="teaching.intro"></textarea>
+                    <h2>Teaching page visibility</h2>
+                    <p class="admin-hint">Take the whole Teaching page offline at once. It's removed from the site navigation and the page shows a short notice. Your entries below are kept.</p>
+                    <div class="admin-actions">
+                        <button class="admin-button" id="toggleTeachingHidden">Hide entire Teaching page</button>
+                        <span id="teachingVisibilityState" class="admin-status" role="status"></span>
                     </div>
                 </div>
-                <div class="admin-panel">
-                    <h2>Positions / courses</h2>
-                    <p class="admin-hint">Each entry becomes a card on the Teaching page. “Courses” are shown as tags — one per line.</p>
-                    <div id="teachingList"></div>
-                    <button class="admin-button ghost" id="addTeaching">+ Add entry</button>
+                <div id="teachingEditor">
+                    <div class="admin-panel">
+                        <h2>Intro paragraph</h2>
+                        <div class="field">
+                            <textarea id="teachingIntro" data-path="teaching.intro"></textarea>
+                        </div>
+                    </div>
+                    <div class="admin-panel">
+                        <h2>Positions / courses</h2>
+                        <p class="admin-hint">Each entry becomes a card on the Teaching page. Use ↑ ↓ to reorder and <strong>Visible / Hidden</strong> to keep an entry off the live page. “Courses” are shown as tags — one per line.</p>
+                        <div id="teachingList"></div>
+                        <button class="admin-button ghost" id="addTeaching">+ Add entry</button>
+                    </div>
                 </div>
             </section>
 

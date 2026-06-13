@@ -1110,7 +1110,9 @@ img {
 .section-card.is-hidden > .section-header .section-title-input,
 .entry-card.is-hidden,
 .item-card.is-hidden,
-.admin-panel.is-hidden {
+.admin-panel.is-hidden,
+.admin-grid.is-hidden,
+#teachingEditor.is-hidden {
     opacity: 0.55;
 }
 

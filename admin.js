@@ -614,25 +614,53 @@
         persist();
     });
 
-    var toggleCvHidden = document.getElementById('toggleCvHidden');
-    var cvVisibilityState = document.getElementById('cvVisibilityState');
-    var cvSectionsPanel = document.getElementById('cvSectionsPanel');
+    // Whole-page on/off switch (CV, Research, Teaching all share this).
+    function makePageVisibility(opts) {
+        var btn = document.getElementById(opts.button);
+        var stateEl = document.getElementById(opts.state);
+        var panel = opts.panel ? document.getElementById(opts.panel) : null;
+        if (!btn) { return function () {}; }
 
-    function syncCvVisibility() {
-        var hidden = Boolean(state.cv.hidden);
-        toggleCvHidden.textContent = hidden ? 'Show CV on site' : 'Hide entire CV';
-        toggleCvHidden.classList.toggle('highlight', hidden);
-        cvVisibilityState.textContent = hidden
-            ? 'The CV is hidden — it will not appear on the live site.'
-            : 'The CV is visible on the live site.';
-        if (cvSectionsPanel) { cvSectionsPanel.classList.toggle('is-hidden', hidden); }
+        function sync() {
+            var hidden = Boolean(state[opts.key].hidden);
+            btn.textContent = hidden ? opts.showLabel : opts.hideLabel;
+            btn.classList.toggle('highlight', hidden);
+            stateEl.textContent = hidden ? opts.hiddenMsg : opts.visibleMsg;
+            if (panel) { panel.classList.toggle('is-hidden', hidden); }
+        }
+
+        btn.addEventListener('click', function () {
+            state[opts.key].hidden = !state[opts.key].hidden;
+            persist();
+            sync();
+            setStatus(state[opts.key].hidden ? opts.hiddenToast : opts.visibleToast);
+        });
+
+        return sync;
     }
 
-    toggleCvHidden.addEventListener('click', function () {
-        state.cv.hidden = !state.cv.hidden;
-        persist();
-        syncCvVisibility();
-        setStatus(state.cv.hidden ? 'CV hidden from the site.' : 'CV will be shown on the site.');
+    var syncCvVisibility = makePageVisibility({
+        key: 'cv', button: 'toggleCvHidden', state: 'cvVisibilityState', panel: 'cvSectionsPanel',
+        hideLabel: 'Hide entire CV', showLabel: 'Show CV on site',
+        hiddenMsg: 'The CV is hidden — it will not appear on the live site.',
+        visibleMsg: 'The CV is visible on the live site.',
+        hiddenToast: 'CV hidden from the site.', visibleToast: 'CV will be shown on the site.'
+    });
+
+    var syncResearchVisibility = makePageVisibility({
+        key: 'research', button: 'toggleResearchHidden', state: 'researchVisibilityState', panel: 'researchEditor',
+        hideLabel: 'Hide entire Research page', showLabel: 'Show Research page on site',
+        hiddenMsg: 'The Research page is hidden — it will not appear on the live site.',
+        visibleMsg: 'The Research page is visible on the live site.',
+        hiddenToast: 'Research page hidden.', visibleToast: 'Research page will be shown.'
+    });
+
+    var syncTeachingVisibility = makePageVisibility({
+        key: 'teaching', button: 'toggleTeachingHidden', state: 'teachingVisibilityState', panel: 'teachingEditor',
+        hideLabel: 'Hide entire Teaching page', showLabel: 'Show Teaching page on site',
+        hiddenMsg: 'The Teaching page is hidden — it will not appear on the live site.',
+        visibleMsg: 'The Teaching page is visible on the live site.',
+        hiddenToast: 'Teaching page hidden.', visibleToast: 'Teaching page will be shown.'
     });
 
     /* ---------------------------------------------------------------- */
@@ -839,6 +867,8 @@
         renderTeachingAdmin();
         renderCvAdmin();
         syncCvVisibility();
+        syncResearchVisibility();
+        syncTeachingVisibility();
     }
 
     function bindNavToggle() {
@@ -846,8 +876,9 @@
         var navMenu = document.querySelector('.nav-menu');
         if (navToggle && navMenu) {
             navToggle.addEventListener('click', function () {
-                navMenu.classList.toggle('active');
+                var open = navMenu.classList.toggle('active');
                 navToggle.classList.toggle('active');
+                navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
             });
         }
         var year = document.getElementById('footerYear');
