@@ -8,7 +8,7 @@ window.SITE_DATA = {
     "institution": "University of Florida",
     "email": "suren.mohammed@ufl.edu",
     "photo": "suren-square.jpg",
-    "cvFile": "",
+    "cvFile": "Mohammed_CV.pdf",
     "links": [
       {
         "label": "GitHub",
@@ -23,7 +23,7 @@ window.SITE_DATA = {
       "Civilian Targeting",
       "International Security",
       "Middle East Politics",
-      "Kurdish Politics"
+      "Kurdish Politics."
     ],
     "bio": [
       "I am a third-year PhD student in Political Science and a predoctoral fellow at the Violence, Conflict, and Security (ViCS) Lab at the University of Florida. I hold an M.A. in International Affairs from Missouri State University and a B.A. in International Studies from the American University of Iraq, Sulaimani.",
