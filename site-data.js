@@ -76,7 +76,7 @@ window.SITE_DATA = {
           {
             "title": "The Spatial Logic of Violence in Communal War",
             "type": "dissertation",
-            "committee": "Ben Smith (Chair), David Siroky, Michael Bernhard, William Whitham",
+            "committee": "Prof. Ben Smith (Chair), Prof. David Siroky, Prof. Michael Bernhard",
             "abstract": "Why does communal violence emerge and peak in some localities but not in others? How do interface localities affect communal mobilization and violence? Can the spatial distribution of communal groups help explain and predict local differences in mobilization and violence? When should we expect such escalation? How macro-level political upheavals affect the spatial distribution of local violence? Does violence in these localities stem from contests over territory and resources, identity claims, or security dilemmas driven by fear and mistrust during political upheaval?"
           }
         ],
