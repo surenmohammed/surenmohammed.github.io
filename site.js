@@ -260,8 +260,14 @@
         }
 
         var dl = document.getElementById('cvDownload');
-        if (dl && profile.cvFile) {
-            dl.href = profile.cvFile;
+        if (dl) {
+            if (profile.cvFile) {
+                dl.href = profile.cvFile;
+                dl.style.display = '';
+            } else {
+                // No CV PDF on file — don't show a dead download button.
+                dl.style.display = 'none';
+            }
         }
 
         var sections = ((data.cv && data.cv.sections) || [])
