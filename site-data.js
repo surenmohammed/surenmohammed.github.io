@@ -45,6 +45,11 @@ window.SITE_DATA = {
                 "url": "https://www.tandfonline.com/doi/full/10.1080/17449057.2023.2275229"
               }
             ]
+          },
+          {
+            "title": "Mohammed, Suren J. (2026). Studying Ethnic Conflict: Insights from the Kurdish Case. PS: Political Science & Politics.",
+            "status": "Forthcoming.",
+            "abstract": "The study of ethnic conflict has grown considerably. This expansion,\nhowever, entails methodological and theoretical cleavages often leading to fragmentation\nin knowledge and the generation of disconnected research clusters. Using the\nKurdish case, this article maps the evolution of empirical research on Kurdish conflict\nby showing which types of research have been produced and how each type engages\ntheoretical and methodological debates or clashes. I argue that the research is\ncategorized into three research styles. The first style is a historically oriented,\ndescriptive, and often atheoretical tradition rooted in area studies and history that\ntreats “the Kurds” as a macro-collective unit of analysis. The second is a cross-national\ncomparative style that shifts the unit of analysis to organizations and armed groups,\nattempting to explain movement trajectories and state strategies across space and\ntime. The third style, which is most developed in the Turkish case, is a micro-level and\nquantitative approach that leverages disaggregated data to study mobilization, rebel\ngovernance, and legacies of violence. Despite major contributions from each style, the\nfield remains fragmented by methodological, geographic, and professional-network\ncleavages. The study's conclusion reflects on what has been learned, what remains to be\nlearned, and the challenges and opportunities ahead."
           }
         ]
       },
@@ -87,7 +92,8 @@ window.SITE_DATA = {
           }
         ]
       }
-    ]
+    ],
+    "hidden": false
   },
   "teaching": {
     "intro": "I have served as a graduate teaching and research assistant at the University of Florida and Missouri State University, supporting courses and research in comparative politics, international security, and political methodology.",
@@ -113,7 +119,8 @@ window.SITE_DATA = {
         "description": "",
         "courses": []
       }
-    ]
+    ],
+    "hidden": false
   },
   "cv": {
     "sections": [
