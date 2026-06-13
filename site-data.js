@@ -8,7 +8,7 @@ window.SITE_DATA = {
     "institution": "University of Florida",
     "email": "suren.mohammed@ufl.edu",
     "photo": "suren-square.jpg",
-    "cvFile": "Mohammed_CV.pdf",
+    "cvFile": "",
     "links": [
       {
         "label": "GitHub",
