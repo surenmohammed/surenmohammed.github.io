@@ -58,19 +58,13 @@ window.SITE_DATA = {
         "items": [
           {
             "title": "Great Power Politics and the Timing of Recognition (with David Siroky and Nikola Mirilovic)."
-          }
-        ]
-      },
-      {
-        "title": "Work in Progress",
-        "items": [
-          {
-            "title": "The Spatial Logic of Violence in Communal War: Evidence from Iraq (2003-2009)",
-            "status": "Expected Submission: Spring 2026",
-            "abstract": "Why does communal violence emerge and peak in some localities, but not others? While scholarly interest in communal violence has grown, we still know less about the structural factors that shape where communal violence occurs and why it clusters in specific localities within divided societies. This paper explores how interface localities affect communal mobilization and violence. I argue that localities where two rival communal groups are present in relatively sizable numbers are more prone to earlier and intense communal violence. Further, I argue that the effect of local communal parity on communal violent escalation is most pronounced during periods of political upheavals, when the resulting uncertainty and fear generate local security dilemma. I support these arguments using a dataset of subnational communal violence events during the Iraqi Communal War (2003-2009). I then draw on case studies of three districts--Khadimiya, Al-Tarmiyah, and Muqdadiya, using qualitative evidence, to unpack the mechanisms of strengthening of communal identities, networks, and mobilization in interface localities."
           },
           {
-            "title": "Expert Assessment and Short-Horizon Conflict Forecasting (with David Siroky)"
+            "title": "Why does communal violence emerge and peak in some localities, but not others?",
+            "status": "Expected Submission: Spring 2026"
+          },
+          {
+            "title": "Expert Assessment and Conflict Forecasting (with David Siroky)"
           }
         ]
       },
@@ -89,13 +83,13 @@ window.SITE_DATA = {
     "hidden": false
   },
   "teaching": {
-    "intro": "I have served as a graduate teaching and research assistant at the University of Florida and Missouri State University, supporting courses and research in comparative politics, international security, and political methodology.",
+    "intro": "",
     "entries": [
       {
         "role": "Graduate Research Assistant",
         "org": "University of Florida",
         "period": "Fall 2024 – Present",
-        "description": "Research assistant at the Violence, Conflict, and Security (ViCS) Lab, Florida Institute for National Security.",
+        "description": "",
         "courses": []
       },
       {
