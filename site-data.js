@@ -2,7 +2,7 @@
 // (or download this file and commit it to GitHub).
 window.SITE_DATA = {
   "profile": {
-    "name": "Suren Jamal. Mohammed",
+    "name": "Suren Jamal Mohammed",
     "fullName": "Suren Jamal Mohammed",
     "role": "PhD Student, Political Science",
     "institution": "University of Florida",
@@ -26,9 +26,9 @@ window.SITE_DATA = {
       "Kurdish Politics."
     ],
     "bio": [
-      "I am a third-year PhD student in Political Science and a predoctoral fellow at the Violence, Conflict, and Security (ViCS) Lab at the University of Florida. I hold an M.A. in International Affairs from Missouri State University and a B.A. in International Studies from the American University of Iraq, Sulaimani.",
-      "I study comparative politics and international security with substantive research interests in political violence, civil wars, ethnic, communal, identity, and self-determination conflicts, with an empirical focus on the Middle East and North Africa (MENA). Methodologically, I employ both quantitative and qualitative approaches.",
-      "My dissertation examines the determinants of subnational variation in communal violence. Specifically, I ask why communal violence emerges and escalates in some localities—but not in others—within divided societies."
+      "I am a Ph.D. student in Political Science at the University of Florida and a Genocide and Atrocity Prevention Research Fellow at the United States Holocaust Memorial Museum’s Simon-Skjodt Center for the Prevention of Genocide for 2026–2027. I hold an M.A. in International Affairs from Missouri State University and a B.A. in International Studies from the American University of Iraq, Sulaimani.",
+      "My research lies at the intersection of comparative politics and international security, with substantive interests in political violence, civil war, genocide and atrocity prevention, ethnic and communal conflict, identity-based violence, and self-determination movements. Regionally, my work focuses on the Middle East and North Africa. Methodologically, I employ both quantitative, including statistical modeling and machine learning, and qualitative approaches.",
+      "My dissertation examines the determinants of subnational variation in communal violence. Specifically, it asks why communal violence emerges, clusters, and escalates in some localities, but not in others, within the same divided societies."
     ]
   },
   "research": {
@@ -49,9 +49,11 @@ window.SITE_DATA = {
           {
             "title": "Mohammed, Suren J. (2026). Studying Ethnic Conflict: Insights from the Kurdish Case. PS: Political Science & Politics.",
             "status": "Forthcoming.",
-            "abstract": "The study of ethnic conflict has grown considerably. This expansion,\nhowever, entails methodological and theoretical cleavages often leading to fragmentation\nin knowledge and the generation of disconnected research clusters. Using the\nKurdish case, this article maps the evolution of empirical research on Kurdish conflict\nby showing which types of research have been produced and how each type engages\ntheoretical and methodological debates or clashes. I argue that the research is\ncategorized into three research styles. The first style is a historically oriented,\ndescriptive, and often atheoretical tradition rooted in area studies and history that\ntreats “the Kurds” as a macro-collective unit of analysis. The second is a cross-national\ncomparative style that shifts the unit of analysis to organizations and armed groups,\nattempting to explain movement trajectories and state strategies across space and\ntime. The third style, which is most developed in the Turkish case, is a micro-level and\nquantitative approach that leverages disaggregated data to study mobilization, rebel\ngovernance, and legacies of violence. Despite major contributions from each style, the\nfield remains fragmented by methodological, geographic, and professional-network\ncleavages. The study's conclusion reflects on what has been learned, what remains to be\nlearned, and the challenges and opportunities ahead."
+            "abstract": "The study of ethnic conflict has grown considerably. This expansion,\nhowever, entails methodological and theoretical cleavages often leading to fragmentation\nin knowledge and the generation of disconnected research clusters. Using the\nKurdish case, this article maps the evolution of empirical research on Kurdish conflict\nby showing which types of research have been produced and how each type engages\ntheoretical and methodological debates or clashes. I argue that the research is\ncategorized into three research styles. The first style is a historically oriented,\ndescriptive, and often atheoretical tradition rooted in area studies and history that\ntreats “the Kurds” as a macro-collective unit of analysis. The second is a cross-national\ncomparative style that shifts the unit of analysis to organizations and armed groups,\nattempting to explain movement trajectories and state strategies across space and\ntime. The third style, which is most developed in the Turkish case, is a micro-level and\nquantitative approach that leverages disaggregated data to study mobilization, rebel\ngovernance, and legacies of violence. Despite major contributions from each style, the\nfield remains fragmented by methodological, geographic, and professional-network\ncleavages. The study's conclusion reflects on what has been learned, what remains to be\nlearned, and the challenges and opportunities ahead.",
+            "hidden": false
           }
-        ]
+        ],
+        "hidden": false
       },
       {
         "title": "Work Under Review",
@@ -60,13 +62,13 @@ window.SITE_DATA = {
             "title": "Great Power Politics and the Timing of Recognition (with David Siroky and Nikola Mirilovic)."
           },
           {
-            "title": "Why does communal violence emerge and peak in some localities, but not others?",
-            "status": "Expected Submission: Spring 2026"
+            "title": "Why does communal violence emerge and peak in some localities, but not others?"
           },
           {
             "title": "Expert Assessment and Conflict Forecasting (with David Siroky)"
           }
-        ]
+        ],
+        "hidden": false
       },
       {
         "title": "Dissertation Project",
@@ -75,9 +77,10 @@ window.SITE_DATA = {
             "title": "The Spatial Logic of Violence in Communal War",
             "type": "dissertation",
             "committee": "Ben Smith (Chair), David Siroky, Michael Bernhard, William Whitham",
-            "abstract": "Why does communal violence emerge and peak in some localities but not in others? How do interface localities affect communal mobilization and violence? Can the spatial distribution of communal groups help explain and predict local differences in mobilization and violence? When should we expect such escalation? How macro-level political upheavals affect the spatial distribution of local violence? Does violence in these localities stem from contests over territory and resources, identity claims, or security dilemmas driven by fear and mistrust during political upheaval? While scholarly interest in communal violence has grown, limited attention has been devoted to the structural factors that shape where communal violence occurs and why it clusters in specific localities within divided societies. In exploring these questions, this study advances a theoretical explanation of the conditions under which and mechanisms through which interface localities might lead to communal mobilization and violence. I argue that localities where two rival groups are present in relatively equal numbers are more prone to earlier and intense waves of communal violence. Moreover, I argue that the effect of local group parity on intergroup communal violent escalation is most pronounced during periods of political shocks or transition, when uncertainty and fear generate local security dilemma. I support these arguments using several datasets of subnational communal violent events in the Iraqi Communal War (2003-2009), the Lebanese Communal War (1975-1991), the Communal Violence in Egypt (2013-2018), and other cases. I then draw on case studies of three districts--Khadimiya, Al-Tarmiyah, and Muqdadiya in Iraq, using qualitative evidence, to unpack the mechanisms through which ethnic identities are reinforced, activated, and mobilized in high parity-interface localities."
+            "abstract": "Why does communal violence emerge and peak in some localities but not in others? How do interface localities affect communal mobilization and violence? Can the spatial distribution of communal groups help explain and predict local differences in mobilization and violence? When should we expect such escalation? How macro-level political upheavals affect the spatial distribution of local violence? Does violence in these localities stem from contests over territory and resources, identity claims, or security dilemmas driven by fear and mistrust during political upheaval?"
           }
-        ]
+        ],
+        "hidden": false
       }
     ],
     "hidden": false
