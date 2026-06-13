@@ -10,7 +10,10 @@ window.SITE_DATA = {
     "photo": "suren-square.jpg",
     "cvFile": "Mohammed_CV.pdf",
     "links": [
-      { "label": "GitHub", "url": "https://github.com/surenmohammed" }
+      {
+        "label": "GitHub",
+        "url": "https://github.com/surenmohammed"
+      }
     ],
     "interests": [
       "Political Violence",
@@ -137,13 +140,17 @@ window.SITE_DATA = {
             "title": "M.A., International Affairs",
             "detail": "Missouri State University — Springfield, MO",
             "date": "2021 – 2023",
-            "bullets": ["Field: Middle East Politics"]
+            "bullets": [
+              "Field: Middle East Politics"
+            ]
           },
           {
             "title": "B.A., International Studies",
             "detail": "American University of Iraq, Sulaimani — Kurdistan Region, Iraq",
             "date": "2017 – 2021",
-            "bullets": ["Major: International Security; minor: Economics"]
+            "bullets": [
+              "Major: International Security; minor: Economics"
+            ]
           }
         ]
       },
@@ -317,6 +324,7 @@ window.SITE_DATA = {
           }
         ]
       }
-    ]
+    ],
+    "hidden": true
   }
 };
