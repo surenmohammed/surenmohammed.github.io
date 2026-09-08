@@ -28,7 +28,7 @@ window.SITE_DATA = {
     "bio": [
       "I am a third-year PhD student in Political Science and a predoctoral fellow at the Violence, Conflict, and Security (ViCS) Lab at the University of Florida. I hold an M.A. in International Affairs from Missouri State University and a B.A. in International Studies from the American University of Iraq, Sulaimani.",
       "I study comparative politics and international security with substantive research interests in political violence, civil wars, ethnic, communal, identity, and self-determination conflicts, with an empirical focus on the Middle East and North Africa (MENA). Methodologically, I employ both quantitative and qualitative approaches.",
-      "My dissertation examines the determinants of subnational variation in communal violence. Specifically, I ask why communal violence emerges and escalates in some localities—but not in others—within divided societies."
+      "My dissertation project examines the determinants of subnational variation in communal violence. Specifically, I ask why communal violence emerges and escalates in some localities—but not in others—within divided societies."
     ]
   },
   "research": {
@@ -57,8 +57,7 @@ window.SITE_DATA = {
         "title": "Work Under Review",
         "items": [
           {
-            "title": "Great Power Politics and the Timing of Secession Recognition (with David Siroky and Nikola Mirilovic)",
-            "abstract": "Why do some secessionist entities achieve rapid international recognition while others remain in diplomatic limbo? Prevailing explanations stress legal norms, contagion risks, or transnational identities. The early recognition of Bangladesh, conferred by 62 states before Pakistan's consent, provides leverage to evaluate these accounts in the shadow of the Cold War rivalry and postcolonial state formation. This article offers the first large-N quantitative analysis of Bangladesh's recognition. Drawing on original cross-national data covering 134 states from 1971-1974, it tests competing explanations for recognition timing. The results show no consistent deterrent effect from faith (shared religion) or fear (domestic secessionist threats). Instead, recognition patterns were shaped by strategic alignment and regime type. Warsaw Pact members and states with bilateral ties to Moscow were significantly more likely to recognize early, while democracies outside alliance blocs also moved quickly to legitimize Bangladesh's statehood. These findings challenge accounts privileging normative and identity-based mechanisms and highlight conditions, great power competition, regime affinity, and alliance cohesion, under which recognition may unfold rapidly without parent-state consent. By treating Bangladesh as a quasi-natural experiment, the article clarifies the strategic logic of recognition and its implications for contested sovereignty."
+            "title": "Great Power Politics and the Timing of Secession Recognition (with David Siroky and Nikola Mirilovic)"
           }
         ]
       },
@@ -77,8 +76,7 @@ window.SITE_DATA = {
             "hidden": true
           },
           {
-            "title": "Algorithms and Expert Assessement: Short-Horizon Conflict Forecasting? (with David Siroky)",
-            "abstract": "Short-horizon forecasting of political violence has largely centered on slow-moving structural conditions and autoregressive signals extracted from recent conflict dynamics. Structural indicators offer limited leverage at daily horizons, while autoregressive models, despite strong average performance, are inherently backward-looking and may miss rapid shifts in security conditions. This Letter evaluates whether high-frequency, expert-coded policy assessments can complement these approaches. We incorporate the U.S. State Department's Travel Advisory system as a real-time indicator of instability and assess its value for forecasting daily conflict incidence. Using a daily country-level panel for July-December 2025 and a standard machine-learning classifier, we show that Travel Advisory levels exhibit strong standalone predictive performance (AUC = 0.84) and consistently improve forecasts when combined with autoregressive benchmarks. A combined model incorporating advisory levels and a seven-day rolling average of recent fatalities achieves the highest out-of-sample performance (AUC = 0.94). The results highlight the forecast value of expert-coded anticipatory risk assessments, designed for policy communication rather than statistical modeling, to strengthen short-horizon conflict early-warning systems."
+            "title": "Algorithms and Expert Assessement: Short-Horizon Conflict Forecasting? (with David Siroky)"
           }
         ]
       },
