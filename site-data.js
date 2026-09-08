@@ -58,25 +58,12 @@ window.SITE_DATA = {
         "items": [
           {
             "title": "Great Power Politics and the Timing of Secession Recognition (with David Siroky and Nikola Mirilovic)"
-          }
-        ]
-      },
-      {
-        "title": "Work in Progress",
-        "items": [
-          {
-            "title": "The Spatial Logic of Violence in Communal War",
-            "status": "Expected Submission: Spring 2026",
-            "abstract": "Why does communal violence emerge and peak in some localities, but not others? While scholarly interest in communal violence has grown, we still know less about the structural factors that shape where communal violence occurs and why it clusters in specific localities within divided societies. This paper explores how interface localities affect communal mobilization and violence. I argue that localities where two rival communal groups are present in relatively sizable numbers are more prone to earlier and intense communal violence. Further, I argue that the effect of local communal parity on communal violent escalation is most pronounced during periods of political upheavals, when the resulting uncertainty and fear generate local security dilemma. I support these arguments using a dataset of subnational communal violence events during the Iraqi Communal War (2003-2009). I then draw on case studies of three districts--Khadimiya, Al-Tarmiyah, and Muqdadiya, using qualitative evidence, to unpack the mechanisms of strengthening of communal identities, networks, and mobilization in interface localities."
-          },
-          {
-            "title": "Automating War and Peace: Introducing an AI Agent for Conflict Forecasting (with David Siroky, David Muchlinski, Yu Wang, Dilruba Tas, and Gabe Rigdon)",
-            "status": "Expected Submission: Spring 2026",
-            "abstract": "This paper introduces Delphi, a prompt-driven Artificial Intelligence (AI) agent designed to enhance conflict forecasting. Predicting the onset and escalation of violent conflict traditionally relies on expert judgment and theoretical frameworks that emphasize distinct causal mechanisms. To explore the potential for automation in this process, we develop an AI agent that uses Large Language Model (LLM)-guided hyperparameter tuning to optimize Random Forest classifiers, each grounded in theoretical models of conflict based on grievances, political opportunity, and resource mobilization. The agent dynamically adjusts to different stages of conflict, onset and escalation, by tailoring parameter searches and feature relevance to each phase. The agent also generates political reports based on the AI-optimized theoretical models that enhance the interpretability of theoretical implications, while offering actionable, policy-oriented insights. Applied to Self-Determination Movements (SDMs), AI-tuned models tend to achieve predictive performance better than existing human-tuned approaches, while offering theory-informed interpretability and stage-specific insights. This framework demonstrates how AI can augment human expertise by combining theoretical coherence with empirical adaptability in forecasting political violence.",
-            "hidden": true
           },
           {
             "title": "Algorithms and Expert Assessement: Short-Horizon Conflict Forecasting? (with David Siroky)"
+          },
+          {
+            "title": "The Spatial Logic of Violence in Communal War"
           }
         ]
       },
@@ -84,9 +71,9 @@ window.SITE_DATA = {
         "title": "Dissertation Project",
         "items": [
           {
-            "type": "dissertation",
             "title": "The Spatial Logic of Violence in Communal War: Evidence from the Middle East and North Africa",
-            "committee": "Ben Smith (Chair), David Siroky, Michael Bernhard, William Whitham",
+            "type": "dissertation",
+            "committee": "Prof. Ben Smith (Chair), Prof. David Siroky, Prof. Michael Bernhard",
             "abstract": "Why does communal violence emerge and peak in some localities but not in others? How do interface localities affect communal mobilization and violence? Can the spatial distribution of communal groups help explain and predict local differences in mobilization and violence? When should we expect such escalation? How macro-level political upheavals affect the spatial distribution of local violence? Does violence in these localities stem from contests over territory and resources, identity claims, or security dilemmas driven by fear and mistrust during political upheaval? While scholarly interest in communal violence has grown, limited attention has been devoted to the structural factors that shape where communal violence occurs and why it clusters in specific localities within divided societies. In exploring these questions, this study advances a theoretical explanation of the conditions under which and mechanisms through which interface localities might lead to communal mobilization and violence. I argue that localities where two rival groups are present in relatively equal numbers are more prone to earlier and intense waves of communal violence. Moreover, I argue that the effect of local group parity on intergroup communal violent escalation is most pronounced during periods of political shocks or transition, when uncertainty and fear generate local security dilemma. I support these arguments using several datasets of subnational communal violent events in the Iraqi Communal War (2003-2009), the Lebanese Communal War (1975-1991), the Communal Violence in Egypt (2013-2018), and other cases. I then draw on case studies of three districts--Khadimiya, Al-Tarmiyah, and Muqdadiya in Iraq, using qualitative evidence, to unpack the mechanisms through which ethnic identities are reinforced, activated, and mobilized in high parity-interface localities."
           }
         ]
