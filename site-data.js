@@ -2,7 +2,7 @@
 // (or download this file and commit it to GitHub).
 window.SITE_DATA = {
   "profile": {
-    "name": "Suren Jamal. Mohammed",
+    "name": "Suren Jamal Mohammed",
     "fullName": "Suren Jamal Mohammed",
     "role": "PhD Student, Political Science",
     "institution": "University of Florida",
@@ -16,23 +16,28 @@ window.SITE_DATA = {
       }
     ],
     "interests": [
-      "Political Violence",
-      "Ethnic Conflict",
-      "Self-Determination Conflicts",
-      "Conflict Forecasting",
-      "Civilian Targeting",
-      "International Security",
-      "Middle East Politics",
-      "Kurdish Politics."
+      "Political Violence; Communal Conflict; Conflict Forecasting; Political Mobilization;International Security; Middle East Politics; Kurdish Politics."
     ],
     "bio": [
-      "I am a third-year PhD student in Political Science and a predoctoral fellow at the Violence, Conflict, and Security (ViCS) Lab at the University of Florida. I hold an M.A. in International Affairs from Missouri State University and a B.A. in International Studies from the American University of Iraq, Sulaimani.",
-      "I study comparative politics and international security with substantive research interests in political violence, civil wars, ethnic, communal, identity, and self-determination conflicts, with an empirical focus on the Middle East and North Africa (MENA). Methodologically, I employ both quantitative and qualitative approaches.",
-      "My dissertation project examines the determinants of subnational variation in communal violence. Specifically, I ask why communal violence emerges and escalates in some localities—but not in others—within divided societies."
+      "I am a fourth-year Ph.D. student in Political Science, a Genocide and Atrocity Prevention Research Fellow at the United States Holocaust Memorial Museum’s Simon-Skjodt Center for the Prevention of Genocide, and a predoctoral fellow at the Violence, Conflict, and Security (ViCS) Lab at the University of Florida. I also hold an M.A. in International Affairs from Missouri State University and a B.A. in International Studies from the American University of Iraq, Sulaimani.",
+      "I study comparative politics and international security, with substantive research interests in political violence, civil wars, ethnic and communal conflict, identity-based conflict, and self-determination movements. My empirical research focuses primarily on the Middle East and North Africa (MENA). Methodologically, I employ both quantitative approaches—including statistical modeling and machine learning—and qualitative methods.",
+      "My dissertation project examines the determinants of subnational variation in communal violence. Specifically, I ask why communal violence emerges and escalates in some localities but not in others within the same divided societies."
     ]
   },
   "research": {
     "sections": [
+      {
+        "title": "Dissertation Project",
+        "items": [
+          {
+            "title": "The Spatial Logic of Violence in Communal War: Evidence from the Middle East and North Africa",
+            "type": "dissertation",
+            "committee": "Prof. Ben Smith (Chair), Prof. David Siroky, Prof. Michael Bernhard, Prof. Chelsi Mueller",
+            "abstract": "Why does communal violence emerge and peak in some localities but not others? While scholarly interest in communal violence has grown, we still know relatively less why it clusters in specific localities within divided societies. This study explores how communal parity affects communal mobilization and violence. I argue that localities where two rival communal groups are present in relatively sizable numbers are more prone to earlier and more intense communal violence. Further, I argue that the effect of local communal parity on the escalation of communal violence is most pronounced during periods of political upheaval, when the resulting uncertainty and fear generate local security dilemmas. I evaluate this argument through a mixed-methods subnational design. The main empirical chapter studies the Iraqi Communal War (2003-2009) between Shiite and Sunni Arab groups, using district-level data. I then draw on case studies of three Iraqi districts, Khadimiya, Al-Tarmiyah, and Muqdadiya, using qualitative evidence to illuminate key causal process or mechanisms linking communal parity to violence, including the strengthening of communal identities, networks, and mobilization. The study then examines external validity or generalizability of the argument through subnational analyses of the Lebanese Communal War (1975-1990) and anti-Christian violence in Egypt (2013-2018)."
+          }
+        ],
+        "hidden": false
+      },
       {
         "title": "Peer-Reviewed Publications",
         "items": [
@@ -64,17 +69,6 @@ window.SITE_DATA = {
           },
           {
             "title": "The Spatial Logic of Violence in Communal War"
-          }
-        ]
-      },
-      {
-        "title": "Dissertation Project",
-        "items": [
-          {
-            "title": "The Spatial Logic of Violence in Communal War: Evidence from the Middle East and North Africa",
-            "type": "dissertation",
-            "committee": "Prof. Ben Smith (Chair), Prof. David Siroky, Prof. Michael Bernhard",
-            "abstract": "Why does communal violence emerge and peak in some localities but not in others? How do interface localities affect communal mobilization and violence? Can the spatial distribution of communal groups help explain and predict local differences in mobilization and violence? When should we expect such escalation? How macro-level political upheavals affect the spatial distribution of local violence? Does violence in these localities stem from contests over territory and resources, identity claims, or security dilemmas driven by fear and mistrust during political upheaval? While scholarly interest in communal violence has grown, limited attention has been devoted to the structural factors that shape where communal violence occurs and why it clusters in specific localities within divided societies. In exploring these questions, this study advances a theoretical explanation of the conditions under which and mechanisms through which interface localities might lead to communal mobilization and violence. I argue that localities where two rival groups are present in relatively equal numbers are more prone to earlier and intense waves of communal violence. Moreover, I argue that the effect of local group parity on intergroup communal violent escalation is most pronounced during periods of political shocks or transition, when uncertainty and fear generate local security dilemma. I support these arguments using several datasets of subnational communal violent events in the Iraqi Communal War (2003-2009), the Lebanese Communal War (1975-1991), the Communal Violence in Egypt (2013-2018), and other cases. I then draw on case studies of three districts--Khadimiya, Al-Tarmiyah, and Muqdadiya in Iraq, using qualitative evidence, to unpack the mechanisms through which ethnic identities are reinforced, activated, and mobilized in high parity-interface localities."
           }
         ]
       }
