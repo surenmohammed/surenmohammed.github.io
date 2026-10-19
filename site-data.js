@@ -16,10 +16,10 @@ window.SITE_DATA = {
       }
     ],
     "interests": [
-      "Political Violence; Communal Conflict; Conflict Forecasting; Political Mobilization;International Security; Middle East Politics; Kurdish Politics."
+      "Political Violence; Ethnic Conflict; Conflict Forecasting;International Security; Middle East Politics; Kurdish Politics."
     ],
     "bio": [
-      "I am a Ph.D. Candidate in Political Science, a Genocide and Atrocity Prevention Research Fellow at the United States Holocaust Memorial Museum’s Simon-Skjodt Center for the Prevention of Genocide, and a predoctoral fellow at the Violence, Conflict, and Security (ViCS) Lab at the University of Florida. I also hold an M.A. in International Affairs from Missouri State University and a B.A. in International Studies from the American University of Iraq, Sulaimani.",
+      "I am a Ph.D. candidate in Political Science, a Genocide and Atrocity Prevention Research Fellow at the United States Holocaust Memorial Museum’s Simon-Skjodt Center for the Prevention of Genocide, and a predoctoral fellow at the Violence, Conflict, and Security (ViCS) Lab at the University of Florida. I also hold an M.A. in International Affairs from Missouri State University and a B.A. in International Studies from the American University of Iraq, Sulaimani.",
       "I study comparative politics and international security, with substantive research interests in political violence, civil wars, ethnic and communal conflict, identity-based conflict, and self-determination movements. My empirical research focuses primarily on the Middle East and North Africa (MENA). Methodologically, I employ both quantitative approaches—including statistical modeling and machine learning—and qualitative methods.",
       "My dissertation project examines the determinants of subnational variation in communal violence. Specifically, I ask why communal violence emerges and escalates in some localities but not in others within the same divided societies."
     ]
