@@ -230,7 +230,7 @@
                 <div class="admin-grid">
                     <div class="admin-panel">
                         <h2>Publish to GitHub Pages</h2>
-                        <p class="admin-hint">Commits <code>site-data.js</code> straight to your repository — the live site updates a minute later. You need a GitHub <strong>fine-grained personal access token</strong> with <em>Contents: read &amp; write</em> permission for this repository (<a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">create one here</a>).</p>
+                        <p class="admin-hint">Saves your content to GitHub, then GitHub Pages updates the live site. First, <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">create a fine-grained personal access token</a>: choose <strong>Only select repositories → surenmohammed.github.io</strong>, then <strong>Contents → Read and write</strong>. Paste it below. Replace it here when it expires.</p>
                         <div class="field-row">
                             <div class="field">
                                 <label for="ghOwner">Owner</label>
@@ -248,7 +248,7 @@
                             </div>
                             <div class="field">
                                 <label for="ghToken">Access token</label>
-                                <input type="password" id="ghToken" placeholder="github_pat_…">
+                                <input type="password" id="ghToken" placeholder="github_pat_…" autocomplete="off" spellcheck="false">
                             </div>
                         </div>
                         <div class="checkbox-row" style="margin-bottom: 14px;">
@@ -256,9 +256,11 @@
                             <label for="ghRemember">Remember token in this browser</label>
                         </div>
                         <div class="admin-actions">
+                            <button class="admin-button" id="checkConnectionButton">Check connection</button>
                             <button class="admin-button highlight" id="publishButton">Publish to live site</button>
                             <span id="publishStatus" class="admin-status" role="status"></span>
                         </div>
+                        <p class="admin-hint">Check connection tests access without changing your site. Publishing confirms write permission. If you cannot use a token, download <code>site-data.js</code> below and <a href="https://github.com/surenmohammed/surenmohammed.github.io/upload/main" target="_blank" rel="noopener">upload it to GitHub</a>, then commit the change.</p>
                     </div>
                     <div class="admin-panel">
                         <h2>Manual export / backup</h2>

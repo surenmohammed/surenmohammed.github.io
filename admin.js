@@ -689,6 +689,7 @@
     var ghBranch = document.getElementById('ghBranch');
     var ghToken = document.getElementById('ghToken');
     var ghRemember = document.getElementById('ghRemember');
+    var checkConnectionButton = document.getElementById('checkConnectionButton');
     var publishButton = document.getElementById('publishButton');
     var publishStatus = document.getElementById('publishStatus');
 
@@ -725,10 +726,10 @@
         input.addEventListener('change', saveGhSettings);
     });
 
-    function serializeSiteData() {
+    function serializeSiteData(data) {
         return '// All site content lives here. Edit it from admin.html, then publish\n' +
             '// (or download this file and commit it to GitHub).\n' +
-            'window.SITE_DATA = ' + JSON.stringify(state, null, 2) + ';\n';
+            'window.SITE_DATA = ' + JSON.stringify(data || state, null, 2) + ';\n';
     }
 
     function toBase64(str) {
@@ -741,67 +742,112 @@
         return btoa(binary);
     }
 
-    function publish() {
+    function githubSettings() {
         var owner = ghOwner.value.trim();
         var repo = ghRepo.value.trim();
         var branch = ghBranch.value.trim() || 'main';
         var token = ghToken.value.trim();
 
         if (!owner || !repo || !token) {
-            setPublishStatus('Owner, repository, and token are required.', true);
-            return;
+            throw new Error('Enter an owner, repository, and access token.');
         }
 
         saveGhSettings();
-        publishButton.disabled = true;
-        setPublishStatus('Publishing…');
-
-        var api = 'https://api.github.com/repos/' + owner + '/' + repo + '/contents/site-data.js';
-        var headers = {
-            'Authorization': 'Bearer ' + token,
-            'Accept': 'application/vnd.github+json'
+        return {
+            api: 'https://api.github.com/repos/' + encodeURIComponent(owner) + '/' + encodeURIComponent(repo) + '/contents/site-data.js',
+            branch: branch,
+            headers: {
+                'Authorization': 'Bearer ' + token,
+                'Accept': 'application/vnd.github+json',
+                'Content-Type': 'application/json',
+                'X-GitHub-Api-Version': '2022-11-28'
+            }
         };
+    }
 
-        fetch(api + '?ref=' + encodeURIComponent(branch), { headers: headers })
-            .then(function (response) {
-                if (response.status === 404) { return null; }
-                if (response.status === 401 || response.status === 403) {
-                    throw new Error('GitHub rejected the token. Check that it has Contents read & write access to this repository.');
-                }
-                if (!response.ok) { throw new Error('Could not reach the repository (HTTP ' + response.status + ').'); }
-                return response.json();
+    function checkGithubResponse(response) {
+        if (response.ok) { return response.json(); }
+        var messages = {
+            401: 'This token is invalid or expired. Create a new fine-grained token and paste it into Access token.',
+            403: 'GitHub denied access. Select this repository and give the token Contents: Read and write permission. If access is correct, check GitHub for a rate limit or repository rule.',
+            404: 'Repository, branch, or site-data.js was not found. Check the settings and that the token includes this repository.',
+            409: 'The repository changed while publishing. Check the latest content on GitHub before trying again.',
+            422: 'GitHub could not save this update. Check the branch name and repository rules.'
+        };
+        throw new Error(messages[response.status] || 'GitHub request failed (HTTP ' + response.status + '). Try again or use the manual export.');
+    }
+
+    function setGithubBusy(busy) {
+        publishButton.disabled = busy;
+        checkConnectionButton.disabled = busy;
+    }
+
+    function readGithubFile(settings) {
+        return fetch(settings.api + '?ref=' + encodeURIComponent(settings.branch), {
+            headers: settings.headers,
+            cache: 'no-store'
+        }).then(checkGithubResponse).then(function (file) {
+            if (!file || file.type !== 'file' || !file.sha) {
+                throw new Error('GitHub did not return site-data.js. Check the repository and branch.');
+            }
+            return file;
+        });
+    }
+
+    function githubError(error) {
+        setPublishStatus((error instanceof TypeError ? 'Could not connect to GitHub. Check your internet connection and try again.' : error.message || 'GitHub request failed.') + ' Your draft has been kept.', true);
+    }
+
+    function checkConnection() {
+        var settings;
+        try { settings = githubSettings(); } catch (error) { githubError(error); return; }
+        setGithubBusy(true);
+        setPublishStatus('Checking GitHub connection…');
+        return readGithubFile(settings)
+            .then(function () {
+                setPublishStatus('Connected: site-data.js is available on ' + settings.branch + '. Publish will confirm write permission.');
             })
+            .catch(githubError)
+            .finally(function () { setGithubBusy(false); });
+    }
+
+    function publish() {
+        var settings;
+        try { settings = githubSettings(); } catch (error) { githubError(error); return; }
+        var snapshot = clone(state);
+        setGithubBusy(true);
+        setPublishStatus('Saving to GitHub…');
+
+        return readGithubFile(settings)
             .then(function (existing) {
                 var body = {
                     message: 'Update site content via admin page',
-                    content: toBase64(serializeSiteData()),
-                    branch: branch
+                    content: toBase64(serializeSiteData(snapshot)),
+                    branch: settings.branch,
+                    sha: existing.sha
                 };
-                if (existing && existing.sha) { body.sha = existing.sha; }
-                return fetch(api, {
+                return fetch(settings.api, {
                     method: 'PUT',
-                    headers: headers,
+                    headers: settings.headers,
                     body: JSON.stringify(body)
-                });
+                }).then(checkGithubResponse);
             })
-            .then(function (response) {
-                if (!response.ok) {
-                    return response.json().catch(function () { return {}; }).then(function (err) {
-                        throw new Error(err.message || 'Publish failed (HTTP ' + response.status + ').');
-                    });
+            .then(function () {
+                published = normalize(clone(snapshot));
+                var hasNewEdits = JSON.stringify(state) !== JSON.stringify(snapshot);
+                if (!hasNewEdits) {
+                    try { localStorage.removeItem(DRAFT_KEY); } catch (e) { /* ignore */ }
                 }
-                published = normalize(clone(state));
-                setPublishStatus('Published! The live site updates within a minute or two.');
-                setStatus('Published to GitHub.');
+                setPublishStatus('Saved to GitHub. Allow a few minutes for GitHub Pages to update, then refresh your site.' + (hasNewEdits ? ' Edits made during publishing are still a draft; publish again when ready.' : ''));
+                setStatus('Saved to GitHub.');
             })
-            .catch(function (error) {
-                setPublishStatus(error.message || 'Publish failed.', true);
-            })
+            .catch(githubError)
             .finally(function () {
-                publishButton.disabled = false;
+                setGithubBusy(false);
             });
     }
 
+    checkConnectionButton.addEventListener('click', checkConnection);
     publishButton.addEventListener('click', publish);
 
     function download(filename, content, type) {
